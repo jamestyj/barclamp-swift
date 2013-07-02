@@ -67,10 +67,10 @@
     = select_tag :debug, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["debug"].to_s), :onchange => "update_value('debug', 'debug', 'boolean')"
   %p
     %label{ :for => :middlewares }= t('.middlewares.label')
-  %div{ :id => 'middlewares', :class => 'container' }
+  %div{ :id => 'middlewares' }
     %p
       %label{ :for => :s3 }= t('.middlewares.s3')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_s3 }= t('.middlewares.enabled')
         = select_tag :enable_s3, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["s3"]["enabled"].to_s), :onchange => "update_value('middlewares/s3/enabled', 'enable_s3', 'boolean')"
@@ -88,25 +88,25 @@
         = select_tag :use_gitbarclamp, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["s3"]["use_gitbarclamp"].to_s), :onchange => "update_value('middlewares/s3/use_gitbarclamp', 'use_gitbarclamp', 'boolean')"
     %p      
       %label{ :for => :staticweb }= t('.middlewares.staticweb')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_staticweb }= t('.middlewares.enabled')
         = select_tag :enable_staticweb, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["staticweb"]["enabled"].to_s), :onchange => "update_value('middlewares/staticweb/enabled', 'enable_staticweb', 'boolean')"
     %p
       %label{ :for => :tempurl }= t('.middlewares.tempurl')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_tempurl }= t('.middlewares.enabled')
         = select_tag :enable_tempurl, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["tempurl"]["enabled"].to_s), :onchange => "update_value('middlewares/tempurl/enabled', 'enable_tempurl', 'boolean')"
     %p
       %label{ :for => :formpost }= t('.middlewares.formpost')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_formpost }= t('.middlewares.enabled')
         = select_tag :enable_formpost, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["formpost"]["enabled"].to_s), :onchange => "update_value('middlewares/formpost/enabled', 'enable_formpost', 'boolean')"
     %p
       %label{ :for => :domain_remap }= t('.middlewares.domain_remap')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_domain_remap }= t('.middlewares.enabled')
         = select_tag :enable_domain_remap, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["domain_remap"]["enabled"].to_s), :onchange => "update_value('middlewares/domain_remap/enabled', 'enable_domain_remap', 'boolean')"
@@ -118,7 +118,7 @@
         %input#storage_domain{:type => "text", :name => "storage_domain", :'data-default' => @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["domain_remap"]["storage_domain"], :onchange => "update_value('middlewares/domain_remap/storage_domain', 'storage_domain', 'string')"}
     %p
       %label{ :for => :cname_lookup }= t('.middlewares.cname_lookup')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_cname_lookup }= t('.middlewares.enabled')
         = select_tag :enable_cname_lookup, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["cname_lookup"]["enabled"].to_s), :onchange => "update_value('middlewares/cname_lookup/enabled', 'enable_cname_lookup', 'boolean')"
@@ -130,7 +130,7 @@
         %input#storage_domain_cname_lookup{:type => "text", :name => "storage_domain_cname_lookup", :'data-default' => @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["cname_lookup"]["storage_domain"], :onchange => "update_value('middlewares/cname_lookup/storage_domain', 'storage_domain_cname_lookup', 'string')"}
     %p
       %label{ :for => :ratelimit }= t('.middlewares.ratelimit')
-    %div.container
+    %div
       %p
         %label{ :for => :enable_ratelimit }= t('.middlewares.enabled')
         = select_tag :enable_ratelimit, options_for_select([['true','true'], ['false', 'false']], @proposal.raw_data['attributes'][@proposal.barclamp]["middlewares"]["ratelimit"]["enabled"].to_s), :onchange => "update_value('middlewares/ratelimit/enabled', 'enable_ratelimit', 'boolean')"
